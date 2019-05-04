@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 /*
 Implement function CountNumbers that accepts a sorted array of unique integers and, 
@@ -28,17 +26,17 @@ public class SortedSearch
 
     public static int CountNumbers(int[] sortedArray, int lessThan)
     {        
-        int start = 0;
+        int begin = 0;
         int end = sortedArray.Length - 1;
         int mid = 0;
-        while (start <= end)
+        while (begin <= end)
         {
-            mid = (start + end) / 2;
+            mid = (begin + end) / 2;
             if (sortedArray[mid] < lessThan)
             {
                 if (mid < sortedArray.Length - 1 && sortedArray[mid + 1] < lessThan)
-                {   // check id next value is also valid
-                    start = mid + 1;
+                {   
+                    begin = mid + 1;
                     continue;
                 }
                 else
